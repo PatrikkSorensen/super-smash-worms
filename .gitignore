@@ -1,0 +1,45 @@
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+ 
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+[Ee]xported[Oo]bj/
+.vs/
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+
+# ================= #
+# Plugins generated #
+# ================= #
+
+unity/Assets/Plugins/
+unity/Assets/Plugins.meta
+unity/Assets/AstarPathfindingEditor/
+
+unity/Assets/RAIN/
+unity/Assets/RAIN.meta
+
+unity/Assets/AI.meta
+unity/Assets/AI/

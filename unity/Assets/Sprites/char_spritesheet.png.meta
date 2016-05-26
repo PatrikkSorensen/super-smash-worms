@@ -1,0 +1,336 @@
+fileFormatVersion: 2
+guid: 06320528d657f7b46b42a447d183e68a
+timeCreated: 1463868064
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: left_shoulderarm
+    21300002: right_shoulderarm
+    21300004: left_underarm
+    21300006: left_underarm
+    21300008: torso
+    21300010: head
+    21300012: left_overleg
+    21300014: left_underleg
+    21300016: left_foot
+    21300018: right_foot
+    21300020: right_underleg
+    21300022: right_overleg
+    21300024: right_hand
+    21300026: left_hand
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 120
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: left_shoulderarm
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 749
+        width: 180
+        height: 85
+      alignment: 9
+      pivot: {x: 0.06463763, y: 0.4890898}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.634773, y: 43.42737}
+        - {x: -11.634773, y: -32.57263}
+        - {x: -7.6347733, y: -41.57263}
+        - {x: 168.36523, y: -41.57263}
+        - {x: 168.36523, y: 38.42737}
+        - {x: 154.36523, y: 43.42737}
+    - name: right_shoulderarm
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 597
+        width: 180
+        height: 88
+      alignment: 9
+      pivot: {x: 0.062232938, y: 0.5092787}
+      border: {x: 2, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.7980728, y: 43.18347}
+        - {x: -8.201927, y: 35.18347}
+        - {x: -11.201927, y: 29.183472}
+        - {x: -11.201927, y: -44.81653}
+        - {x: 160.79807, y: -44.81653}
+        - {x: 168.79807, y: -43.81653}
+        - {x: 168.79807, y: 38.18347}
+        - {x: 60.798073, y: 43.18347}
+    - name: left_underarm
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 766
+        width: 183
+        height: 66
+      alignment: 9
+      pivot: {x: 0.029250681, y: 0.345348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 136.64713, y: 43.20703}
+        - {x: 3.6471252, y: 24.207031}
+        - {x: -5.3528748, y: 18.207031}
+        - {x: -5.3528748, y: -18.792969}
+        - {x: -1.3528748, y: -22.792969}
+        - {x: 177.64713, y: -22.792969}
+        - {x: 177.64713, y: 13.207031}
+        - {x: 165.64713, y: 43.20703}
+    - name: left_underarm
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 606
+        width: 189
+        height: 68
+      alignment: 9
+      pivot: {x: 0.9512113, y: 0.3399021}
+      border: {x: 0, y: 3, z: 0, w: 0}
+      outline:
+      - - {x: -99.77893, y: 44.886658}
+        - {x: -175.77893, y: 44.886658}
+        - {x: -179.77893, y: 12.886658}
+        - {x: -179.77893, y: -23.113342}
+        - {x: 9.221069, y: -23.113342}
+        - {x: 9.221069, y: 27.886658}
+        - {x: -1.7789307, y: 34.886658}
+    - name: torso
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 409
+        width: 178
+        height: 348
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 89, y: 114}
+        - {x: 89, y: 141}
+        - {x: 81, y: 152}
+        - {x: 76, y: 155}
+        - {x: 47, y: 159}
+        - {x: 38, y: 174}
+        - {x: -29, y: 174}
+        - {x: -39, y: 156}
+        - {x: -76, y: 155}
+        - {x: -82, y: 152}
+        - {x: -89, y: 142}
+        - {x: -89, y: 90}
+        - {x: -83, y: 4}
+        - {x: -78, y: -52}
+        - {x: -70, y: -163}
+        - {x: -61, y: -174}
+        - {x: 61, y: -174}
+        - {x: 70, y: -167}
+        - {x: 74, y: -157}
+        - {x: 82, y: -6}
+    - name: head
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 773
+        width: 171
+        height: 198
+      alignment: 9
+      pivot: {x: 0.5037585, y: 0.029336024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.1427, y: 191.19147}
+        - {x: -65.1427, y: 166.19147}
+        - {x: -86.1427, y: 117.19147}
+        - {x: -86.1427, y: 39.191467}
+        - {x: -62.1427, y: 7.1914673}
+        - {x: -42.1427, y: -5.8085327}
+        - {x: 34.8573, y: -5.8085327}
+        - {x: 55.8573, y: -2.8085327}
+        - {x: 84.8573, y: 52.191467}
+        - {x: 84.8573, y: 149.19147}
+        - {x: 37.8573, y: 191.19147}
+    - name: left_overleg
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 268
+        width: 83
+        height: 137
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9470865}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 7.2491455}
+        - {x: -41.5, y: 1.2491455}
+        - {x: -41.5, y: -105.750854}
+        - {x: -32.5, y: -129.75085}
+        - {x: 38.5, y: -129.75085}
+        - {x: 41.5, y: -78.750854}
+        - {x: 41.5, y: -1.7508545}
+        - {x: 36.5, y: 7.2491455}
+    - name: left_underleg
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 113
+        width: 63
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 71.5}
+        - {x: -31.5, y: -52.5}
+        - {x: -28.5, y: -71.5}
+        - {x: 30.5, y: -71.5}
+        - {x: 31.5, y: -43.5}
+        - {x: 31.5, y: 67.5}
+        - {x: 25.5, y: 71.5}
+    - name: left_foot
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 55
+        width: 104
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 0.5}
+        - {x: -52, y: -20.5}
+        - {x: 52, y: -20.5}
+        - {x: 52, y: 20.5}
+        - {x: -4, y: 20.5}
+        - {x: -43, y: 18.5}
+    - name: right_foot
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 55
+        width: 103
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: 20.5}
+        - {x: -51.5, y: 20.5}
+        - {x: -51.5, y: -20.5}
+        - {x: 51.5, y: -20.5}
+        - {x: 51.5, y: 1.5}
+        - {x: 42.5, y: 17.5}
+    - name: right_underleg
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 112
+        width: 62
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 72}
+        - {x: -31, y: 66}
+        - {x: -31, y: -72}
+        - {x: 22, y: -72}
+        - {x: 31, y: -64}
+        - {x: 31, y: 72}
+    - name: right_overleg
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 268
+        width: 85
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.5, y: 68}
+        - {x: -42.5, y: 66}
+        - {x: -42.5, y: -67}
+        - {x: -39.5, y: -68}
+        - {x: 38.5, y: -68}
+        - {x: 42.5, y: -37}
+        - {x: 42.5, y: 55}
+        - {x: 38.5, y: 68}
+    - name: right_hand
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 650
+        width: 43
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 3, w: 0}
+      outline:
+      - - {x: -18.5, y: 33}
+        - {x: -21.5, y: 30}
+        - {x: -21.5, y: -32}
+        - {x: -20.5, y: -33}
+        - {x: 21.5, y: -33}
+        - {x: 21.5, y: 33}
+    - name: left_hand
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 900
+        width: 43
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 34}
+        - {x: -21.5, y: -36}
+        - {x: 21.5, y: -36}
+        - {x: 21.5, y: 34}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

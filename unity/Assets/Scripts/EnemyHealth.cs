@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public EnemyStats stats = new EnemyStats(); 
 
-    public void DamageEnemy(int damage)
+    public void ApplyDamage(int damage)
     {
         stats.health -= damage;
         if (stats.health <= 0)

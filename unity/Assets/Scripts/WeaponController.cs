@@ -7,12 +7,8 @@ public class WeaponController : MonoBehaviour {
     public LayerMask whatToHit;
     public GameObject bulletTrailBrefab; 
          
-
-    private SpriteRenderer m_SpriteRenderer;
     private Animator m_Anim; 
     private AudioSource m_AudioSource; 
-    private float m_Timer = 1.0f;
-    private float m_Delay = -1.0f;  
 
 	void Start () {
         m_AudioSource = GetComponentInChildren<AudioSource>();
@@ -29,13 +25,22 @@ public class WeaponController : MonoBehaviour {
         CreateBulletTrail(); 
         if (hit.collider != null)
         {
-            Debug.DrawLine(weaponEdgePos, hit.point, Color.red);
-            Debug.Log("We hit" + hit.collider.name);
-            m_AudioSource.Play();
+            //Debug.DrawLine(weaponEdgePos, hit.point, Color.red);
+            //Debug.Log("We hit" + hit.collider.name);
+
+
+            if (hit.collider.gameObject.tag == "Enemy")
+            {
+                EnemyHealth enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
+                enemy.ApplyDamage(10);
+            }
+            else
+            {
+                m_AudioSource.Play();
+            }
         }
 
         m_Anim.SetTrigger("Shoot"); 
-        //Debug.DrawLine(weaponEdgePos, mousePosition, Color.blue);
     }
 
     void CreateBulletTrail()

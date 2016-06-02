@@ -41,7 +41,7 @@ namespace UnityStandardAssets._2D
             {
                 if (colliders[i].gameObject != gameObject)
                 {
-                    Debug.Log(colliders[i].gameObject.name);
+                    //Debug.Log(colliders[i].gameObject.name);
                     m_Grounded = true;
                 }
 
@@ -62,7 +62,6 @@ namespace UnityStandardAssets._2D
                 m_Grounded = false;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce) );
 
-                Debug.Log(m_Grounded);
             }
         }
     }

@@ -14,15 +14,5 @@ public class MoveTrail : MonoBehaviour
         Destroy(gameObject, timeBeforeDestroyed);
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.gameObject.tag == "Enemy")
-        {
-            coll.gameObject.SendMessage("ApplyDamage", 10);
-            Debug.Log("Adding damage");
-            Destroy(coll.gameObject); 
-        }
-        
-
-    }
+    
 }

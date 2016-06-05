@@ -21,8 +21,8 @@ public class GameMaster : MonoBehaviour {
         Destroy(player); 
     }
 
-    public static void KillEnemy(GameObject enemy)
+    public static void KillEnemy(GameObject enemy, float time)
     {
-        Destroy(enemy);
+        Destroy(enemy, time);
     }
 }

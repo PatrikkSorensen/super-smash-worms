@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class FollowMouse : MonoBehaviour {
-
-    public int rotationOffset = 90; 
 	
-	// Update is called once per frame
 	void Update () {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 mouse_position = Input.mousePosition;
+        if(!Camera.main.orthographic)
+            mouse_position.z = Camera.main.farClipPlane; 
+
+        Vector3 difference = Camera.main.ScreenToWorldPoint(mouse_position) - transform.position;
         difference.Normalize();
 
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotZ + rotationOffset); 
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotZ); 
     }
 }

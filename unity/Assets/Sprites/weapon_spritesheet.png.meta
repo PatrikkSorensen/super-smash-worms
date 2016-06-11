@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: 0c7d665f9a696844aaedf9da5c188488
-timeCreated: 1463761206
+timeCreated: 1465659997
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: weapon_spritesheet_0
     21300002: weapon_spritesheet_1
+    21300004: weapon_spritesheet_2
+    21300006: weapon_spritesheet_3
+    21300008: weapon_spritesheet_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,31 +58,109 @@ TextureImporter:
     - name: weapon_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 417
+        x: 140
+        y: 698
         width: 147
         height: 94
-      alignment: 9
-      pivot: {x: 0.16771503, y: 0.38508022}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -20.65411, y: 57.80246}
-        - {x: -24.65411, y: 45.80246}
-        - {x: -24.65411, y: -36.19754}
-        - {x: 62.34589, y: -36.19754}
-        - {x: 122.34589, y: -18.19754}
-        - {x: 122.34589, y: 57.80246}
+      - - {x: -70.5, y: 47}
+        - {x: -73.5, y: 35}
+        - {x: -73.5, y: -46}
+        - {x: -71.5, y: -47}
+        - {x: -40.5, y: -47}
+        - {x: 73.5, y: 15}
+        - {x: 73.5, y: 47}
     - name: weapon_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 189
-        y: 476
-        width: 25
-        height: 42
+        x: 632
+        y: 654
+        width: 205
+        height: 205
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 102.5, y: 97.5}
+        - {x: 97.5, y: 102.5}
+        - {x: -95.5, y: 102.5}
+        - {x: -100.5, y: 98.5}
+        - {x: -100.5, y: 97.5}
+        - {x: -102.5, y: 95.5}
+        - {x: -102.5, y: -95.5}
+        - {x: -97.5, y: -101.5}
+        - {x: -96.5, y: -102.5}
+        - {x: 97.5, y: -102.5}
+        - {x: 102.5, y: -97.5}
+    - name: weapon_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 454
+        width: 380
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -190, y: 64}
+        - {x: -190, y: -24}
+        - {x: -96, y: -55}
+        - {x: -90, y: -63}
+        - {x: -84, y: -64}
+        - {x: -52, y: -64}
+        - {x: -33, y: -1}
+        - {x: 190, y: -13}
+        - {x: 190, y: 64}
+    - name: weapon_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 419
+        width: 205
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 102.5, y: -97}
+        - {x: 102.5, y: 96}
+        - {x: 98.5, y: 101}
+        - {x: 97.5, y: 101}
+        - {x: 95.5, y: 103}
+        - {x: -96.5, y: 103}
+        - {x: -102.5, y: 97}
+        - {x: -102.5, y: -97}
+        - {x: -96.5, y: -103}
+        - {x: 95.5, y: -103}
+        - {x: 97.5, y: -101}
+        - {x: 98.5, y: -101}
+    - name: weapon_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 64
+        width: 205
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 102.5, y: 97.5}
+        - {x: 97.5, y: 102.5}
+        - {x: -95.5, y: 102.5}
+        - {x: -100.5, y: 98.5}
+        - {x: -100.5, y: 97.5}
+        - {x: -102.5, y: 95.5}
+        - {x: -102.5, y: -95.5}
+        - {x: -101.5, y: -98.5}
+        - {x: -97.5, y: -101.5}
+        - {x: -96.5, y: -102.5}
+        - {x: 97.5, y: -102.5}
+        - {x: 102.5, y: -97.5}
     outline: []
   spritePackingTag: 
   userData: 

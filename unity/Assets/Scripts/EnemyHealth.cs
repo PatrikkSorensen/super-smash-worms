@@ -43,9 +43,6 @@ public class EnemyHealth : MonoBehaviour {
         else
             m_anim.SetBool("playerInSight", false);
 
-        if (Input.GetKey(KeyCode.X))
-            KillEnemy(); 
-
     }
 
     public void ApplyDamage(int damage)

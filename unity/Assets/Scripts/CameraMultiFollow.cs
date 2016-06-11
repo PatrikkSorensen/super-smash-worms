@@ -38,7 +38,7 @@ public class CameraMultiFollow : MonoBehaviour {
         {
             float newFOV = distanceBetweenPlayers * 3;
             newFOV = Mathf.Clamp(newFOV, minZoom, maxZoom); 
-            Debug.Log(distanceBetweenPlayers + " , maxZoom: " + maxZoom);
+            //Debug.Log(distanceBetweenPlayers + " , maxZoom: " + maxZoom);
 
             Camera.main.fieldOfView = newFOV; 
         }

@@ -9,7 +9,7 @@ public class CheckCollision : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
-            Debug.Log("Hitted an obstacle!");
+            //Debug.Log("Hitted an obstacle!");
             isStuck = true; 
         }
 

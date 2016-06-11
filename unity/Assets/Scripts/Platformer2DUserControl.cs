@@ -8,6 +8,7 @@ namespace UnityStandardAssets._2D
     public class Platformer2DUserControl : MonoBehaviour
     {
         public WeaponController weapon;
+        public UIWeaponMenu menu; 
 
         private PlatformerCharacter2D m_Character;
         private bool m_Jump;
@@ -16,6 +17,7 @@ namespace UnityStandardAssets._2D
         private void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
+            menu = GetComponentInChildren<UIWeaponMenu>();
         }
 
 
@@ -26,6 +28,10 @@ namespace UnityStandardAssets._2D
 
             if (Input.GetMouseButtonDown(0))
                 weapon.Shoot();
+
+            if (Input.GetKeyDown(KeyCode.X))
+                menu.ToggleMenu();
+
         }
 
 

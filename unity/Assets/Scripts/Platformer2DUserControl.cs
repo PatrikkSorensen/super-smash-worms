@@ -4,10 +4,10 @@ using UnityEngine;
 namespace UnityStandardAssets._2D
 {
     [RequireComponent(typeof (PlatformerCharacter2D))]
-    [RequireComponent(typeof(WeaponController))]
+    [RequireComponent(typeof(GunBehaviour))]
     public class Platformer2DUserControl : MonoBehaviour
     {
-        public WeaponController weapon;
+        public GunBehaviour weapon;
         public UIWeaponMenu menu; 
 
         private PlatformerCharacter2D m_Character;

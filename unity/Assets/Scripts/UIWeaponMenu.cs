@@ -4,13 +4,15 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class UIWeaponMenu : MonoBehaviour {
 
+    public GameObject m_arm;
 
-    private Animator m_anim;
-    private bool m_visible; 
+    private Animator m_menuAnim;
+    private Animator m_armAnim; 
+    private bool m_visible;
 
-	// Use this for initialization
 	void Awake () {
-        m_anim = GetComponent<Animator>();
+        m_menuAnim = GetComponent<Animator>();
+        m_armAnim = m_arm.GetComponent<Animator>(); 
         m_visible = false; 
 
     }
@@ -18,12 +20,21 @@ public class UIWeaponMenu : MonoBehaviour {
     public void ToggleMenu() {
         if (!m_visible)
         {
-            m_anim.SetTrigger("FadeIn");
+            m_menuAnim.SetTrigger("FadeIn");
             m_visible = true;
         } else
         {
-            m_anim.SetTrigger("FadeOut");
+            m_menuAnim.SetTrigger("FadeOut");
             m_visible = false;
         } 
+    }
+
+    public void SwitchToGun() {
+        m_armAnim.SetTrigger("pickup_gun"); 
+    }
+
+    public void SwitchToRocketLauncher()
+    {
+        m_armAnim.SetTrigger("pickup_rocket");
     }
 }

@@ -13,6 +13,7 @@ public class CameraMultiFollow : MonoBehaviour {
     public float maxBend;
     public float minZoom = 10.0f; 
     public float maxZoom = 140.0f;
+    public float defaultZoom = 60.0f; 
 
     private Vector3 m_middlePos; 
 	
@@ -23,7 +24,15 @@ public class CameraMultiFollow : MonoBehaviour {
 
     void UpdateCameraPosition()
     {
-        m_middlePos = (players[0].position + players[1].position) / 2.0f;
+        if (players[1] == null)
+        {
+            m_middlePos = players[0].position;
+        }
+        else
+        {
+            m_middlePos = (players[0].position + players[1].position) / 2.0f;
+        }
+
         Vector3 nextCamPos = Vector3.Lerp(transform.position, m_middlePos, Time.deltaTime);
         nextCamPos.z = -10.0f; 
         transform.position = nextCamPos; 
@@ -31,7 +40,13 @@ public class CameraMultiFollow : MonoBehaviour {
 
     void UpdateCameraZoom()
     {
-        
+
+        if (players[1] == null)
+        {
+            Camera.main.fieldOfView = defaultZoom;
+            return; 
+        }
+
         float distanceBetweenPlayers = Vector3.Distance(players[0].position, players[1].position);
 
         if (distanceBetweenPlayers > distanceBeforeZooming)

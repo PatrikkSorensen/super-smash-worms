@@ -1,20 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GunBehaviour : MonoBehaviour {
+public class GunBehaviour : Weapon {
 
     public Transform weaponEdge; 
     public LayerMask whatToHit;
-    public GameObject bulletTrailBrefab; 
-         
-    private AudioSource m_AudioSource; 
+    public GameObject bulletTrailBrefab;
 
-	void Start () {
-        m_AudioSource = GetComponentInChildren<AudioSource>();
-    }
-
+    override
     public void Shoot()
     {
+        base.Shoot(); 
         Vector2 screenMousePos = Input.mousePosition;
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(screenMousePos).x, Camera.main.ScreenToWorldPoint(screenMousePos).y);
         Vector2 weaponEdgePos = new Vector2(weaponEdge.position.x, weaponEdge.position.y);
@@ -31,10 +27,6 @@ public class GunBehaviour : MonoBehaviour {
             {
                 EnemyHealth enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
                 enemy.ApplyDamage(10);
-            }
-            else
-            {
-                m_AudioSource.Play();
             }
         }
     }

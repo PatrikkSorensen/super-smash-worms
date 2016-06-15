@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class bulletBehaviour : MonoBehaviour {
+public class GunProjectile : MonoBehaviour {
 
     public int bulletDamage = 10;
 

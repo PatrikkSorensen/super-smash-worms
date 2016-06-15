@@ -6,19 +6,25 @@ public class RLauncherBehaviour : Weapon {
     public Transform weaponEdge;
     public LayerMask whatToHit;
     public GameObject rocketProjectile;
-    public float speed = 300.0f; 
+    public GameObject body, player; 
+    public float speed = 300.0f;
 
-    private GameObject m_rocket; 
+    private GameObject m_rocket;
 
     override
     public void Shoot() {
         base.Shoot();
-
-        CreateRocketTrail();
+        CreateRocket();
 
     }
 
-    void CreateRocketTrail()
+    override
+    public void ArmWeapon()
+    {
+
+    }
+
+    void CreateRocket()
     {
         Instantiate(rocketProjectile, weaponEdge.transform.position, weaponEdge.rotation);
     }

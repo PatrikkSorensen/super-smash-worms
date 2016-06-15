@@ -42,13 +42,15 @@ public class UIWeaponMenu : MonoBehaviour {
     }
 
     public void SwitchToGun() {
-        m_playerController.weapon = m_gunBehav; 
+        m_playerController.weapon = m_gunBehav;
+        m_playerController.weapon.ArmWeapon(); 
         m_armAnim.SetTrigger("pickup_gun");
     }
 
     public void SwitchToRocketLauncher()
     {
         m_playerController.weapon = m_rBehav;
+        m_playerController.weapon.ArmWeapon();
         m_armAnim.SetTrigger("pickup_rocket");
     }
 }

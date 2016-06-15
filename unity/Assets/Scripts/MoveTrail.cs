@@ -7,6 +7,8 @@ public class MoveTrail : MonoBehaviour
     public int moveSpeed = 230;
     public int timeBeforeDestroyed = 1;
 
+
+
     // Update is called once per frame
     void Update()
     {

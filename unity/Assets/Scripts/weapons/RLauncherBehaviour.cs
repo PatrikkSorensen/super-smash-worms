@@ -1,20 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RLauncherBehaviour : Weapon {
+public class RLauncherBehaviour : Weapon
+{
+    /*
+     * 
+     * Have a cooldown timer (done in logic)
+     * Have smoke from gun 
+     * Signify slider for holding down 
+     * Trigger animation on fire 
+     * Trigger animation on reload (done) 
+     * Play sound when cant fire
+     */
 
     public Transform weaponEdge;
     public LayerMask whatToHit;
     public GameObject rocketProjectile;
     public GameObject body, player; 
     public float speed = 300.0f;
+    public float cooldownTimer = 1.0f; 
 
     private GameObject m_rocket;
+    private float m_timeSinceFired = 0.0f;
 
     override
     public void Shoot() {
-        base.Shoot();
-        CreateRocket();
+
+        if(Time.time > cooldownTimer + m_timeSinceFired)
+        {
+            base.Shoot();
+            CreateRocket();
+            player.GetComponent<Animator>().SetTrigger("Reload"); 
+            m_timeSinceFired = Time.time; 
+        } else
+        {
+            Debug.Log("Cant fire yet!"); 
+        }
+
+
 
     }
 

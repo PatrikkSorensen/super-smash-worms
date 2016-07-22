@@ -41,8 +41,8 @@ unity/Assets/AstarPathfindingEditor/
 unity/Assets/RAIN/
 unity/Assets/RAIN.meta
 
-unity/Assets/AI.meta
-unity/Assets/AI/
+#unity/Assets/AI.meta
+unity/Assets/AI/cache
 
 unity/Assets/Demigiant
 unity/Assets/Demigiant.meta

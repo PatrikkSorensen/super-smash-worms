@@ -33,6 +33,7 @@ public class RocketProjectile : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        Debug.Log("Collided!"); 
         m_source.Play();
         StartCoroutine(ShatterRocket());
 

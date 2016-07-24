@@ -13,7 +13,8 @@ public class CameraMultiFollow : MonoBehaviour {
     public float maxBend;
     public float minZoom = 10.0f; 
     public float maxZoom = 140.0f;
-    public float defaultZoom = 60.0f; 
+    public float defaultZoom = 60.0f;
+    public Vector3 offset = Vector3.up; 
 
     private Vector3 m_middlePos; 
 	
@@ -33,7 +34,7 @@ public class CameraMultiFollow : MonoBehaviour {
             m_middlePos = (players[0].position + players[1].position) / 2.0f;
         }
 
-        Vector3 nextCamPos = Vector3.Lerp(transform.position, m_middlePos, Time.deltaTime);
+        Vector3 nextCamPos = Vector3.Lerp(transform.position, m_middlePos + offset, Time.deltaTime);
         nextCamPos.z = -10.0f; 
         transform.position = nextCamPos; 
     }

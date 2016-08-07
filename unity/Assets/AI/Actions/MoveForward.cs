@@ -26,6 +26,7 @@ public class MoveForward : RAINAction
     {
 
         m_rb.velocity = new Vector3(m_speed * m_direction, 0.0f, 0.0f);
+
         if (m_collScript.isStuck == true)
         {
             Debug.Log("I should change direction");

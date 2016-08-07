@@ -1,0 +1,63 @@
+﻿using UnityEngine;
+using System.Collections;
+using DG.Tweening; 
+
+public class EyeBeamProjectile : MonoBehaviour {
+
+    public float startWidth;
+    public float endWidth; 
+
+    private LineRenderer m_lr;
+    private Transform[] transforms;
+
+    private bool triggered; 
+
+    void Start()
+    {
+        Debug.Log("Starting beam up"); 
+    }
+
+    void Update()
+    {
+        if (m_lr && !triggered) UpdateBeam();
+        if (Input.GetKey(KeyCode.V) && m_lr) StartCoroutine(NarrowBeam());   
+    }
+
+    public void Instantiate(Transform t1, Transform t2, float startWidth, float endWidth)
+    {
+        m_lr = GetComponent<LineRenderer>();
+        m_lr.SetWidth(startWidth, endWidth); 
+
+        transforms = new Transform[2];
+        transforms[0] = t1;
+        transforms[1] = t2;
+
+        StartCoroutine(NarrowBeam());
+    }
+
+    void UpdateBeam ()
+    {
+
+        m_lr.SetPosition(0, transforms[0].position);
+        m_lr.SetPosition(1, transforms[1].position);
+
+
+    }
+
+    public IEnumerator NarrowBeam ()
+    {
+        //triggered = true; // could be fun to experiment with
+        yield return new WaitForSeconds(1.0f);
+
+        Debug.Log("endWidth : " + endWidth + ", startWidth: " + startWidth);
+        while (endWidth < startWidth)
+        {
+            Debug.Log("Minimizing, endWidth : " + endWidth + ", startWidth: " + startWidth); 
+            m_lr.SetWidth((startWidth -= 0.1f), endWidth); 
+            yield return new WaitForSeconds(0.3f);
+        }
+
+
+        Destroy(gameObject);
+    }
+}

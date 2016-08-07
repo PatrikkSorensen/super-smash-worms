@@ -18,7 +18,7 @@ public class ChasePlayer : RAINAction
 
     public override void Start(RAIN.Core.AI ai)
     {
-        //Debug.Log("Running chase Action"); 
+        Debug.Log("Running chase Action"); 
         m_target = ai.WorkingMemory.GetItem<GameObject>("player");
         m_chaseSpeed = ai.WorkingMemory.GetItem<float>("chaseSpeed");
         m_rb = ai.Body.GetComponent<Rigidbody2D>();
@@ -31,8 +31,9 @@ public class ChasePlayer : RAINAction
         float distance = Vector3.Distance(m_target.transform.position, ai.Body.transform.position);
         Vector3 direction = (m_target.transform.position - ai.Body.transform.position).normalized;
         direction *= m_chaseSpeed * Time.fixedDeltaTime;
+        direction.y = 0.0f; 
 
-        m_rb.AddForce(direction, ForceMode2D.Force);
+        m_rb.velocity = direction * 100;
 
         if (distance > maxDistance)
         {

@@ -3,12 +3,16 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour
 {
-    public AudioClip clip; 
+    public AudioClip clip;
+    public Transform player;
 
     protected AudioSource m_AudioSource;
+    protected Animator m_anim;
+
 
     protected virtual void Awake()
     {
+        m_anim = player.GetComponent<Animator>(); 
         m_AudioSource = GetComponentInChildren<AudioSource>();
     }
 

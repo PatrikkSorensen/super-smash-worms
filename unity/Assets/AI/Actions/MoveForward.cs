@@ -8,7 +8,7 @@ using RAIN.Core;
 public class MoveForward : RAINAction
 {
 
-    private Rigidbody2D m_rb;
+    private Rigidbody m_rb;
     private int m_direction;
     private float m_speed;
     private CheckCollision m_collScript; 
@@ -16,7 +16,7 @@ public class MoveForward : RAINAction
     public override void Start(RAIN.Core.AI ai)
     {
         base.Start(ai);
-        m_rb = ai.Body.GetComponent<Rigidbody2D>();
+        m_rb = ai.Body.GetComponent<Rigidbody>();
         m_collScript = ai.Body.GetComponent<CheckCollision>(); 
         m_direction = ai.WorkingMemory.GetItem<int>("direction");
         m_speed = ai.WorkingMemory.GetItem<float>("speed");  

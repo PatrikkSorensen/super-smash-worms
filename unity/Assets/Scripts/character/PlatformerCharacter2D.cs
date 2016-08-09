@@ -8,61 +8,63 @@ namespace UnityStandardAssets._2D
         public float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         public float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         public LayerMask whatIsGround;
+        public float m_GroundCheckDistance;
 
         private Animator m_Anim; 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .4f; // Radius of the overlap circle to determine if grounded
         private bool m_Grounded;            // Whether or not the player is grounded.
 
-        private Rigidbody2D m_Rigidbody2D;
+        private Rigidbody m_Rigidbody;
+        private Vector3 m_GroundNormal;
+
 
         private void Awake()
         {
-            m_GroundCheck = transform.Find("GroundCheck");
-            m_Rigidbody2D = GetComponent<Rigidbody2D>();
+            m_Rigidbody = GetComponent<Rigidbody>();
             m_Anim = GetComponent<Animator>(); 
         }
 
 
         public void Update()
         {
-            m_Anim.SetFloat("Speed", Mathf.Abs(m_Rigidbody2D.velocity.x));
+            //m_Anim.SetFloat("Speed", Mathf.Abs(m_Rigidbody.velocity.x));
 
-        }
-
-        private void FixedUpdate()
-        {
-            m_Grounded = false;
-
-            // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-            // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, whatIsGround);
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                if (colliders[i].gameObject != gameObject)
-                {
-                    //Debug.Log(colliders[i].gameObject.name);
-                    m_Grounded = true;
-                }
-
-                //Debug.Log(m_Grounded); 
-            }
         }
 
 
         public void Move(float move, bool crouch, bool jump)
         {
             // Move the character
-            m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
+            m_Rigidbody.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody.velocity.y);
+            CheckGroundStatus();
 
             // If the player should jump...
             if (m_Grounded && jump)
             {
                 // Add a vertical force to the player.
                 m_Grounded = false;
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce) );
+                m_Rigidbody.AddForce(new Vector2(0f, m_JumpForce) );
 
             }
+        }
+
+        void CheckGroundStatus()
+        {
+            RaycastHit hitInfo;
+            Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance));
+
+            if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
+            {
+                m_GroundNormal = hitInfo.normal;
+                m_Grounded = true;
+            }
+            else
+            {
+                m_Grounded = false;
+                m_GroundNormal = Vector3.up;
+            }
+
         }
     }
 }

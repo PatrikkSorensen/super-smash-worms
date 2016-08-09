@@ -12,7 +12,7 @@ public class ChasePlayer : RAINAction
 {
 
     public float maxDistance = 20.0f; 
-    private Rigidbody2D m_rb;
+    private Rigidbody m_rb;
     private GameObject m_target;
     private float m_chaseSpeed; 
 
@@ -21,7 +21,7 @@ public class ChasePlayer : RAINAction
         Debug.Log("Running chase Action"); 
         m_target = ai.WorkingMemory.GetItem<GameObject>("player");
         m_chaseSpeed = ai.WorkingMemory.GetItem<float>("chaseSpeed");
-        m_rb = ai.Body.GetComponent<Rigidbody2D>();
+        m_rb = ai.Body.GetComponent<Rigidbody>();
 
         base.Start(ai);
     }

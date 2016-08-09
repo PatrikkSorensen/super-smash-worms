@@ -12,13 +12,15 @@ public class GunProjectile : MonoBehaviour {
         m_shatterParticles = GetComponentInChildren<ParticleSystem>(); 
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-         
-        if (coll.gameObject.tag == "Enemy")
+    void OnCollisionEnter(Collision collision) {
+        
+        Debug.Log("Hello again..");
+
+        if (collision.gameObject.tag == "Enemy")
         {
-            StartCoroutine(ShatterBullet()); 
-            coll.gameObject.SendMessage("ApplyDamage", bulletDamage);
+            Debug.Log("Hello"); 
+            StartCoroutine(ShatterBullet());
+            //collision.gameObject.SendMessage("ApplyDamage", bulletDamage);
             
         }
     }
@@ -26,7 +28,7 @@ public class GunProjectile : MonoBehaviour {
     IEnumerator ShatterBullet()
     {
         m_shatterParticles.Play();
-
+        Destroy(gameObject.GetComponent<BoxCollider>()); 
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject); 
     }

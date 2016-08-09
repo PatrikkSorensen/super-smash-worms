@@ -32,7 +32,6 @@ namespace UnityStandardAssets._2D
 
         }
 
-
         public void Move(float move, bool crouch, bool jump)
         {
             // Move the character

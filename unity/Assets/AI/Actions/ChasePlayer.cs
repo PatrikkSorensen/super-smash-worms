@@ -18,7 +18,6 @@ public class ChasePlayer : RAINAction
 
     public override void Start(RAIN.Core.AI ai)
     {
-        Debug.Log("Running chase Action"); 
         m_target = ai.WorkingMemory.GetItem<GameObject>("player");
         m_chaseSpeed = ai.WorkingMemory.GetItem<float>("chaseSpeed");
         m_rb = ai.Body.GetComponent<Rigidbody>();

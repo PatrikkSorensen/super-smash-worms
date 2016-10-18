@@ -16,7 +16,6 @@ public class RLauncherBehaviour : Weapon
     public Transform weaponEdge;
     public LayerMask whatToHit;
     public GameObject rocketProjectile;
-    public GameObject body; 
     public float speed = 300.0f;
     public float cooldownTimer = 1.0f; 
 

@@ -14,12 +14,9 @@ public class GunProjectile : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision) {
         
-        Debug.Log("Hello again..");
 
         if (collision.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Hello"); 
-            StartCoroutine(ShatterBullet());
+        {            StartCoroutine(ShatterBullet());
             //collision.gameObject.SendMessage("ApplyDamage", bulletDamage);
             
         }

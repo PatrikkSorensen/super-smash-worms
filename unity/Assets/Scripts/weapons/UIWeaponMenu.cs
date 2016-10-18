@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets._2D; 
+using UnityStandardAssets._2D;
+using System;
 
 [RequireComponent(typeof(Animator))]
 public class UIWeaponMenu : MonoBehaviour {
@@ -10,10 +11,13 @@ public class UIWeaponMenu : MonoBehaviour {
     private GameObject m_player;
     private Animator m_menuAnim;
     private Animator m_armAnim;
-    private Platformer2DUserControl m_playerController; 
+    private PlayerController m_playerController;
 
+    private Weapon m_currWeapon; 
     private GunBehaviour m_gunBehav;
-    private RLauncherBehaviour m_rBehav; 
+    private RLauncherBehaviour m_rBehav;
+
+
 
     private bool m_visible;
 
@@ -22,10 +26,13 @@ public class UIWeaponMenu : MonoBehaviour {
         m_armAnim = m_arm.GetComponent<Animator>(); 
         m_visible = false;
         m_player = GameObject.FindGameObjectWithTag("Player");
-        m_playerController = m_player.GetComponent<Platformer2DUserControl>(); 
+        m_playerController = m_player.GetComponent<PlayerController>(); 
 
-        m_gunBehav = m_player.GetComponent<GunBehaviour>();
-        m_rBehav = m_player.GetComponent<RLauncherBehaviour>();
+        m_gunBehav = GameObject.FindObjectOfType<GunBehaviour>();
+        m_rBehav = GameObject.FindObjectOfType<RLauncherBehaviour>();
+
+        // Default weapon: 
+        m_currWeapon = m_gunBehav; 
 
     }
 	
@@ -41,17 +48,22 @@ public class UIWeaponMenu : MonoBehaviour {
         } 
     }
 
+    public Weapon GetCurrentWeapon()
+    {
+        return m_currWeapon;
+    }
+
     public void SwitchToGun() {
-        m_playerController.weapon = m_gunBehav;
-        m_playerController.weapon.ArmWeapon(); 
+        m_playerController.m_weapon = m_gunBehav;
+        m_playerController.m_weapon.ArmWeapon(); 
         m_armAnim.SetTrigger("pickup_gun");
     }
 
     public void SwitchToRocketLauncher()
     {
         Debug.Log(m_playerController); 
-        m_playerController.weapon = m_rBehav;
-        m_playerController.weapon.ArmWeapon();
+        m_playerController.m_weapon = m_rBehav;
+        m_playerController.m_weapon.ArmWeapon();
         m_armAnim.SetTrigger("pickup_rocket");
     }
 }

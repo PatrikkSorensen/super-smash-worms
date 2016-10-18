@@ -14,7 +14,7 @@ public class GunBehaviour : Weapon {
         Vector2 screenMousePos = Input.mousePosition;
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(screenMousePos).x, Camera.main.ScreenToWorldPoint(screenMousePos).y);
         Vector2 weaponEdgePos = new Vector2(weaponEdge.position.x, weaponEdge.position.y);
-        m_anim.SetTrigger("GunReload");
+        //m_anim.SetTrigger("GunReload");
 
         RaycastHit2D hit = Physics2D.Raycast(weaponEdge.position, mousePosition - weaponEdgePos, 1000.0f, whatToHit);
         CreateBulletTrail(); 

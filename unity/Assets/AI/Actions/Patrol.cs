@@ -1,9 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using Pathfinding; 
 using RAIN.Action;
-using RAIN.Core;
 
 [RAINAction]
 public class Patrol : RAINAction

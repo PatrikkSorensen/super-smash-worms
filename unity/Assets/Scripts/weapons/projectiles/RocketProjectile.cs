@@ -11,7 +11,7 @@ public class RocketProjectile : MonoBehaviour {
     public float explosionForce;                
     public LayerMask thingsToExplode; 
 
-    private GameObject m_body, m_player;
+    private GameObject m_player;
     private ParticleSystem m_explodeParticles; 
     private AudioSource m_source; 
 
@@ -20,20 +20,18 @@ public class RocketProjectile : MonoBehaviour {
         Destroy(gameObject, timeBeforeDestroyed);
         m_explodeParticles = GetComponentInChildren<ParticleSystem>(); 
         m_source = GetComponent<AudioSource>();
-
         IgnorePlayerPhysics();
 
     }
 
     void AddForce()
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.right * speed);
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        Debug.Log("Collided!"); 
+    void OnCollisionEnter(Collision collision)
+    { 
         m_source.Play();
         StartCoroutine(ShatterRocket());
 
@@ -42,7 +40,7 @@ public class RocketProjectile : MonoBehaviour {
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, m_radius, thingsToExplode);
 
         foreach (Collider2D m_obj in objects) {
-            Rigidbody2D temp_rb = m_obj.GetComponent<Rigidbody2D>();
+            Rigidbody temp_rb = m_obj.GetComponent<Rigidbody>();
 
             if (m_obj.gameObject.tag == "Enemy")
                 m_obj.gameObject.SendMessage("ApplyDamage", rocketDamage);
@@ -59,13 +57,12 @@ public class RocketProjectile : MonoBehaviour {
 
         Destroy(gameObject, m_source.clip.length);
         Destroy(GetComponent<SpriteRenderer>());
-        Destroy(GetComponent<BoxCollider2D>()); 
+        Destroy(GetComponent<BoxCollider>()); 
     }
 
     IEnumerator ShatterRocket()
     {
         m_explodeParticles.Play();
-
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
     }
@@ -73,9 +70,6 @@ public class RocketProjectile : MonoBehaviour {
     void IgnorePlayerPhysics()
     {
         m_player = GameObject.FindWithTag("Player");
-        m_body = m_player.transform.GetChild(1).gameObject;
-
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), m_player.GetComponent<Collider2D>());
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), m_body.GetComponent<Collider2D>());
+        Physics.IgnoreCollision(GetComponent<BoxCollider>(), m_player.transform.GetChild(0).GetComponent<BoxCollider>());
     }
 }

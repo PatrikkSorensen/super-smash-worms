@@ -35,6 +35,7 @@ public class PlayerCharacter : MonoBehaviour {
             // Add a vertical force to the player.
             m_Grounded = false;
             m_Rigidbody.AddForce(new Vector2(0f, m_JumpForce));
+            m_Anim.SetTrigger("Jump"); 
 
         }
     }

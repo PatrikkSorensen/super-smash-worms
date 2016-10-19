@@ -61,7 +61,6 @@ public class UIWeaponMenu : MonoBehaviour {
 
     public void SwitchToRocketLauncher()
     {
-        Debug.Log(m_playerController); 
         m_playerController.m_weapon = m_rBehav;
         m_playerController.m_weapon.ArmWeapon();
         m_armAnim.SetTrigger("pickup_rocket");

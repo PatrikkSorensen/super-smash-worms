@@ -12,21 +12,21 @@ public class GunProjectile : MonoBehaviour {
         m_shatterParticles = GetComponentInChildren<ParticleSystem>(); 
     }
 
-    void OnCollisionEnter(Collision collision) {
-        
-
-        if (collision.gameObject.tag == "Enemy")
-        {            StartCoroutine(ShatterBullet());
-            //collision.gameObject.SendMessage("ApplyDamage", bulletDamage);
-            
-        }
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collided with: " + other.gameObject.name); 
+        StartCoroutine(ShatterBullet());
     }
 
     IEnumerator ShatterBullet()
     {
+        MoveTrail trail = transform.parent.GetComponent<MoveTrail>();
+        trail.moveSpeed = 0;
+        trail.FadeOutTrail(0.5f); 
+        
         m_shatterParticles.Play();
         Destroy(gameObject.GetComponent<BoxCollider>()); 
         yield return new WaitForSeconds(1.0f);
-        Destroy(gameObject); 
+        
     }
 }

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GunProjectile : MonoBehaviour {
+public class GunProjectile : Projectile {
 
-    public int bulletDamage = 10;
+    
 
     private ParticleSystem m_shatterParticles; 
 
@@ -14,7 +14,6 @@ public class GunProjectile : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided with: " + other.gameObject.name); 
         StartCoroutine(ShatterBullet());
     }
 

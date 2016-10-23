@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using DG.Tweening;
-using RAIN.Core; 
-
-public class EnemyHealth : MonoBehaviour {
+using UnityEngine.UI; 
+public class StandardEnemy : MonoBehaviour {
 
     public Transform[] bodyparts; 
 
@@ -15,43 +14,46 @@ public class EnemyHealth : MonoBehaviour {
 
     public EnemyStats stats = new EnemyStats();
 
-    private SpriteRenderer m_renderer;
+    private MeshRenderer m_renderer;
     private Material m_enemyMat;
     private Color m_orgColor;
     private Color m_dmgColor;
     private Animator m_anim;
-    private AIRig m_ai; 
+
+    private Text t; 
 
     void Awake()
     {
-        m_renderer = GetComponentInChildren<SpriteRenderer>();
+        m_renderer = GetComponentInChildren<MeshRenderer>();
         m_enemyMat = m_renderer.material;
         m_orgColor = m_enemyMat.color;
         m_dmgColor = Color.red;
         m_anim = GetComponent<Animator>();
-        m_ai = GetComponentInChildren<AIRig>(); 
+
+        t = GetComponentInChildren<Text>(); 
     }
 
     void Update()
     {
-        if (!m_anim)
-            return; 
+        t.text = "Health: " + stats.health.ToString(); 
+    }
 
-        bool b = m_ai.AI.WorkingMemory.GetItem<GameObject>("varHero");
-        if (b)
-            m_anim.SetBool("playerInSight", b); 
-        else
-            m_anim.SetBool("playerInSight", false);
 
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<Projectile>())
+        {
+            Projectile p = other.gameObject.GetComponent<Projectile>();
+            ApplyDamage(p.damage); 
+        } 
     }
 
     public void ApplyDamage(int damage)
     {
-
         StartCoroutine(FireMaterialChange()); 
 
         stats.health -= damage;
-        m_anim.SetInteger("health", stats.health);
+        //m_anim.SetInteger("health", stats.health);
 
         if (stats.health <= 0)
             KillEnemy(); 
@@ -68,7 +70,6 @@ public class EnemyHealth : MonoBehaviour {
     {
 
         Destroy(m_anim); 
-        Destroy(m_ai);
         GameMaster.KillEnemy(gameObject, 2.0f);
 
         foreach (Transform t in bodyparts)

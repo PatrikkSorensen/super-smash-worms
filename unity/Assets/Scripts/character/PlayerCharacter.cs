@@ -14,7 +14,6 @@ public class PlayerCharacter : MonoBehaviour {
     private bool m_Grounded;            // Whether or not the player is grounded.
 
     private Rigidbody m_Rigidbody;
-    private Vector3 m_GroundNormal;
 
 
     private void Awake()
@@ -47,13 +46,11 @@ public class PlayerCharacter : MonoBehaviour {
 
         if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
         {
-            m_GroundNormal = hitInfo.normal;
             m_Grounded = true;
         }
         else
         {
             m_Grounded = false;
-            m_GroundNormal = Vector3.up;
         }
 
     }

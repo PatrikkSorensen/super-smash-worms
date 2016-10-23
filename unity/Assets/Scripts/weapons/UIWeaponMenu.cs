@@ -10,7 +10,6 @@ public class UIWeaponMenu : MonoBehaviour {
 
     private GameObject m_player;
     private Animator m_menuAnim;
-    private Animator m_armAnim;
     private PlayerController m_playerController;
 
     private Weapon m_currWeapon; 
@@ -23,7 +22,6 @@ public class UIWeaponMenu : MonoBehaviour {
 
 	void Awake () {
         m_menuAnim = GetComponent<Animator>();
-        m_armAnim = m_arm.GetComponent<Animator>(); 
         m_visible = false;
         m_player = GameObject.FindGameObjectWithTag("Player");
         m_playerController = m_player.GetComponent<PlayerController>(); 
@@ -56,13 +54,11 @@ public class UIWeaponMenu : MonoBehaviour {
     public void SwitchToGun() {
         m_playerController.m_weapon = m_gunBehav;
         m_playerController.m_weapon.ArmWeapon(); 
-        //m_armAnim.SetTrigger("pickup_gun");
     }
 
     public void SwitchToRocketLauncher()
     {
         m_playerController.m_weapon = m_rBehav;
         m_playerController.m_weapon.ArmWeapon();
-        //m_armAnim.SetTrigger("pickup_rocket");
     }
 }

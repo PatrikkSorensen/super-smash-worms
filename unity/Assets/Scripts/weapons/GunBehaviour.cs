@@ -25,11 +25,11 @@ public class GunBehaviour : Weapon {
             //Debug.Log("We hit" + hit.collider.name);
 
 
-            if (hit.collider.gameObject.tag == "Enemy")
-            {
-                EnemyHealth enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
-                enemy.ApplyDamage(10);
-            }
+            //if (hit.collider.gameObject.tag == "Enemy")
+            //{
+            //    EnemyHealth enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
+            //    enemy.ApplyDamage(10);
+            //}
         }
     }
 

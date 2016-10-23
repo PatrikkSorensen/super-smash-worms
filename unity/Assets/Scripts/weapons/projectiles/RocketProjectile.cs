@@ -2,11 +2,10 @@
 using System.Collections;
 using DG.Tweening; 
 
-public class RocketProjectile : MonoBehaviour {
+public class RocketProjectile : Projectile {
 
     public float timeBeforeDestroyed = 1;
     public float speed = 10.0f;
-    public int rocketDamage = 30;
     public float m_radius = 5.0f;
     public float explosionForce;                
     public LayerMask thingsToExplode; 
@@ -43,7 +42,7 @@ public class RocketProjectile : MonoBehaviour {
             Rigidbody temp_rb = m_obj.GetComponent<Rigidbody>();
 
             if (m_obj.gameObject.tag == "Enemy")
-                m_obj.gameObject.SendMessage("ApplyDamage", rocketDamage);
+                m_obj.gameObject.SendMessage("ApplyDamage", damage);
 
             if (temp_rb != null) {
 

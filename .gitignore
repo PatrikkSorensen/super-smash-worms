@@ -38,8 +38,11 @@ unity/Assets/Plugins/
 unity/Assets/Plugins.meta
 unity/Assets/AstarPathfindingEditor/
 
-unity/Assets/RAIN/
-unity/Assets/RAIN.meta
+unity/Assets/Behavior Designer/
+unity/Assets/Behavior Designer.meta
+
+unity/Assets/Gizmos.meta
+unity/Assets/Gizmos/
 
 #unity/Assets/AI.meta
 unity/Assets/AI/cache

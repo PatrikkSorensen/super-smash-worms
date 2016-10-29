@@ -69,6 +69,6 @@ public class RocketProjectile : Projectile {
     void IgnorePlayerPhysics()
     {
         m_player = GameObject.FindWithTag("Player");
-        Physics.IgnoreCollision(GetComponent<BoxCollider>(), m_player.transform.GetChild(0).GetComponent<BoxCollider>());
+        //Physics.IgnoreCollision(GetComponent<BoxCollider>(), m_player.transform.GetChild(0).GetComponent<BoxCollider>());
     }
 }

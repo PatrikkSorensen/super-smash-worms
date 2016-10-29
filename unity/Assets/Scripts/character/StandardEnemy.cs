@@ -35,7 +35,7 @@ public class StandardEnemy : MonoBehaviour {
 
     void Update()
     {
-        t.text = "Health: " + stats.health.ToString(); 
+        //t.text = "Health: " + stats.health.ToString(); 
     }
 
 

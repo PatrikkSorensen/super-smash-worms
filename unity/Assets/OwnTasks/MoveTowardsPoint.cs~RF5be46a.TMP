@@ -7,30 +7,30 @@ public class MoveTowardsPoint : Action {
     public SharedGameObject self;
     public SharedFloat moveSpeed; 
 
+    private Rigidbody rb;
     private NavMeshAgent navAgent; 
 
     public override void OnStart()
     {
+        rb = gameObject.GetComponent<Rigidbody>();
         navAgent = gameObject.GetComponent<NavMeshAgent>(); 
     }
 
     public override TaskStatus OnUpdate()
     {
-        navAgent.SetDestination(point.Value); 
+        Vector3 direction = (point.Value - transform.position).normalized;
+        //rb.velocity = direction * moveSpeed.Value;
 
         float distance = Vector3.Distance(point.Value, transform.position);
         if (distance > 1.5f)
         {
-            //Debug.Log("Returning running, distance: " + distance);
+            Debug.Log("Returning running, distance: " + distance);
             return TaskStatus.Running;
         }
         else
         {
-            //Debug.Log("Returning sucess, distance: " + distance); 
-                    Debug.Log("At point!"); 
+            Debug.Log("Returning sucess, distance: " + distance); 
             return TaskStatus.Success;
         }
-
-
     }
 }

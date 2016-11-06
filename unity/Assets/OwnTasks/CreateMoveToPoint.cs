@@ -24,9 +24,12 @@ public class CreateMoveToPoint : Conditional {
         var CurrentPoint = (SharedVector3)behaviorTree.GetVariable("PatrolPoint");
         CurrentPoint.Value = patrolPoints.Value[m_currentIndex].position;
 
-        Debug.Log("CurrentIndex: " + m_currentIndex); 
-        
-        m_currentIndex++; 
+        m_currentIndex++;
+        Debug.Log(m_currentIndex); 
+
+        if (m_currentIndex == patrolPoints.Value.Count)
+            m_currentIndex = 0; 
+
         return TaskStatus.Success;
     }
 

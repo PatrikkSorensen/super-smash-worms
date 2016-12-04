@@ -25,7 +25,6 @@ public class CreateMoveToPoint : Conditional {
         CurrentPoint.Value = patrolPoints.Value[m_currentIndex].position;
 
         m_currentIndex++;
-        Debug.Log(m_currentIndex); 
 
         if (m_currentIndex == patrolPoints.Value.Count)
             m_currentIndex = 0; 

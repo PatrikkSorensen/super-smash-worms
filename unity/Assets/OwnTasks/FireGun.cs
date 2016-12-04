@@ -7,15 +7,18 @@ public class FireGun : Action {
     public float fireRate = 0;
     public SharedGameObject target;
     public GameObject projectile;
-    //public GameObject weaponEdge;
     public float reloadTime = 2.0f;
+    public AudioClip gunSound; 
 
-    private GameObject weaponEdge; 
 
+    private GameObject weaponEdge;
+    private AudioSource m_source; 
     private float m_timeSinceFired = 0.0f;
 
     public override void OnStart()
     {
+        m_source = transform.GetComponent<AudioSource>();
+        m_source.clip = gunSound; 
         weaponEdge = transform.GetChild(0).GetChild(1).gameObject; 
     }
 
@@ -32,10 +35,7 @@ public class FireGun : Action {
             return TaskStatus.Success;
         }
         else
-        {
-            //Debug.Log("Cant fire yet!");
             return TaskStatus.Running;
-        }
     }
 
     void CreateBulletProjectile()
@@ -47,8 +47,8 @@ public class FireGun : Action {
 
         GameObject bullet = Object.Instantiate(projectile, weaponEdge.transform.position, _lookRotation) as GameObject;
 
-        //Debug.Log("Direction: " + _direction);
-        //Debug.Log("LookRotation: " + _lookRotation);
-        //Debug.Log("Rotation: " + transform.rotation); 
+        m_source.Play(); 
+
+
     }
 }

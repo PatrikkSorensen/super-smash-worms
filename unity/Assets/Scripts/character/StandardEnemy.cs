@@ -44,7 +44,12 @@ public class StandardEnemy : MonoBehaviour {
         if(other.gameObject.GetComponent<Projectile>())
         {
             Projectile p = other.gameObject.GetComponent<Projectile>();
-            ApplyDamage(p.damage); 
+            ApplyDamage(p.damage);
+
+            Vector3 direction = other.transform.position - transform.position; 
+            GetComponent<NavMeshAgent>().updateRotation = false; 
+            GetComponent<NavMeshAgent>().SetDestination(transform.position - direction); 
+
         } 
     }
 
